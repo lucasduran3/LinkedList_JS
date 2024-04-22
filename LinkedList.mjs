@@ -94,6 +94,31 @@ const LinkedList = () => {
     return null;
   };
 
+  const insertAt = (index, value) => {
+    let temp = HEAD;
+    let c = 1;
+
+    if(index < size || index > size){
+      return console.error("Index outside of bounds");
+    }
+
+    while(c < index){
+      temp = temp.nextNode;
+      c++;
+    }
+
+    const before = temp;
+    const after = temp.nextNode;
+
+    temp = new Node(value);
+    temp.nextNode = after;
+    before.nextNode = temp;
+  }
+
+  const removeAt = (index, value) => {
+      
+  }
+
   const toString = () => {
     let result = "";
     let temp = HEAD;
@@ -118,6 +143,7 @@ const LinkedList = () => {
     pop,
     contains,
     find,
+    insertAt,
     toString,
   };
 };
