@@ -6,6 +6,7 @@ linkedList.prepend("value 1");
 linkedList.append("value 2");
 linkedList.append("value 3");
 linkedList.insertAt(1, "value 4");
+linkedList.removeAt(2);
 console.log(`Initial elements: ${linkedList.toString()}`);
 
 console.log(`Size: ${linkedList.size()}`);

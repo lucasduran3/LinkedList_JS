@@ -115,8 +115,20 @@ const LinkedList = () => {
     before.nextNode = temp;
   }
 
-  const removeAt = (index, value) => {
-      
+  const removeAt = (index) => {
+    let temp = HEAD;
+    let c = 0;
+
+    if(index < size || index > size){
+      return console.error("Index outside of bounds");
+    }
+
+    while(c < index){
+      temp = temp.nextNode;
+      c++;
+    }
+
+    temp.nextNode = null;    
   }
 
   const toString = () => {
@@ -144,6 +156,7 @@ const LinkedList = () => {
     contains,
     find,
     insertAt,
+    removeAt,
     toString,
   };
 };
